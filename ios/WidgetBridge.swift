@@ -58,13 +58,47 @@ class WidgetBridge: NSObject {
     if suite == nil {
       reject("InvalidArgument", "[WidgetBridge] ERROR: You need to initUserDefaultsSuit(suiteName) first", NSError(domain: "", code: 200, userInfo: nil))
     } else {
-      let value = suite!.dictionary(forKey: key)
-      if #available(iOS 10.0, *) {
-        os_log("[WidgetBridge] get, key value: ", key, value as! CVarArg)
+      if let value = suite!.dictionary(forKey: key) {
+        if #available(iOS 10.0, *) {
+          os_log("[WidgetBridge] get, key value: ", key, value as! CVarArg)
+        }
+      
+        resolve(value)
+      } else {
+        resolve(nil)
       }
-      resolve(value)
     }
   }
+  
+  
+  @objc(setString:withValue:withResolver:withRejecter:)
+  func setString(key: String, value: String,
+           resolve:RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock
+  ) -> Void {
+    if suite == nil {
+      reject("InvalidArgument", "[WidgetBridge] ERROR: You need to initUserDefaultsSuit(suiteName) first", NSError(domain: "", code: 200, userInfo: nil))
+    } else {
+      suite?.set(value, forKey: key)
+      resolve(true)
+    }
+  }
+  
+
+  @objc(getString:withResolver:withRejecter:)
+  func getString(key: String,
+           resolve:RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock
+  ) -> Void {
+    if suite == nil {
+      reject("InvalidArgument", "[WidgetBridge] ERROR: You need to initUserDefaultsSuit(suiteName) first", NSError(domain: "", code: 200, userInfo: nil))
+    } else {
+      if let value = suite!.string(forKey: key) {
+        resolve(value)
+      } else {
+        resolve(nil)
+      }
+    }
+  }
+  
   
   @objc(reloadWidget:withResolver:withRejecter:)
   func reloadWidget(
