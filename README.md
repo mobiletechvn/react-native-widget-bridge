@@ -2,6 +2,9 @@
 
 A bridge between JS thread and native widget, initially created for sharing data and communication with ios 14 widget
 
+Currently, it's support ios 14
+Android will be supported soon
+
 ## Installation
 
 ```sh
@@ -13,9 +16,30 @@ npm install react-native-widget-bridge
 ```js
 import WidgetBridge from "react-native-widget-bridge";
 
-// ...
-
 const result = await WidgetBridge.multiply(3, 7);
+
+# Always ensure that suite was ready to read/write before interact with it
+const success: Bool = WidgetBridge.ensureUserDefaultsSuit("group.my.exampe.com");
+
+# If suite was read, write to UserDefaults suite
+const success: Bool = WidgetBridge.setDict("MyDictA", {a: 1, b:2, foo: "bar"});
+const success: Bool = WidgetBridge.setString("MyStringB", "This is a test string");
+
+const dict: object = WidgetBridge.getDict("MyDictA");
+const str: String = WidgetBridge.setString("MyStringB");
+
+# Reload widget timeline after your's UserDefaults data was changed
+const myWidgetKind = "my_widget"
+WidgetBridge.reloadWidget(myWidgetKind)
+```
+
+You can get the `myWidgetKind` by looking into your widget entry file:
+```swift
+@main
+struct my_widget: Widget {
+   let kind: String = "my_widget"
+   ...
+}
 ```
 
 ## Contributing

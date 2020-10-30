@@ -1,6 +1,6 @@
 {
   "name": "react-native-widget-bridge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A bridge between JS thread and native widget, initially created for sharing data and communication with ios 14 widget",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
