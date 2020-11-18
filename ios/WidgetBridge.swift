@@ -106,7 +106,9 @@ class WidgetBridge: NSObject {
                     resolve:RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock
   ) -> Void {
     if #available(iOS 14.0, *) {
+      #if arch(arm64) || arch(i386) || arch(x86_64)
       WidgetCenter.shared.reloadTimelines(ofKind: kind)
+      #endif
     }
     resolve(true)
   }
