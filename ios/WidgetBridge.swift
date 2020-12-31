@@ -4,7 +4,7 @@ import WidgetKit
 
 
 @objc(WidgetBridge)
-class WidgetBridge: NSObject {
+public class WidgetBridge: NSObject {
   @objc var suite: UserDefaults?
 
   @objc func initSuit(suiteName: String) {
@@ -12,7 +12,7 @@ class WidgetBridge: NSObject {
   }
 
   @objc(multiply:withB:withResolver:withRejecter:)
-  func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+  public func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
     resolve(a*b)
   }
 

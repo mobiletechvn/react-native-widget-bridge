@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-
-		F4FF95D7245B92E800C19C63 /*  WidgetBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  WidgetBridge.swift */; };
-
-		5E555C0D2413F4C50049A1A2 /* WidgetBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* WidgetBridge.mm */; };
+		D64444B2259D891800E8C17C /* WidgetBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* WidgetBridge.m */; };
+		D6444AA8259DE68100E8C17C /* BGTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6444AA7259DE68100E8C17C /* BGTaskService.swift */; };
+		F4FF95D7245B92E800C19C63 /* WidgetBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* WidgetBridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,12 +26,10 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libWidgetBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWidgetBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
-
 		B3E7B5891CC2AC0600A0062D /* WidgetBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetBridge.m; sourceTree = "<group>"; };
+		D6444AA7259DE68100E8C17C /* BGTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTaskService.swift; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* WidgetBridge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WidgetBridge-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* WidgetBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBridge.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +54,10 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
-
 				F4FF95D6245B92E800C19C63 /* WidgetBridge.swift */,
+				D6444AA7259DE68100E8C17C /* BGTaskService.swift */,
 				B3E7B5891CC2AC0600A0062D /* WidgetBridge.m */,
 				F4FF95D5245B92E700C19C63 /* WidgetBridge-Bridging-Header.h */,
-
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,11 +119,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-
+				D6444AA8259DE68100E8C17C /* BGTaskService.swift in Sources */,
+				D64444B2259D891800E8C17C /* WidgetBridge.m in Sources */,
 				F4FF95D7245B92E800C19C63 /* WidgetBridge.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* WidgetBridge.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +154,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -212,6 +205,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -242,11 +236,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = WidgetBridge;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "WidgetBridge-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Debug;
 		};
@@ -263,10 +255,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = WidgetBridge;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "WidgetBridge-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Release;
 		};
