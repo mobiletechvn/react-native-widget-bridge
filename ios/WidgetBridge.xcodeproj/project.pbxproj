@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libWidgetBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWidgetBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5891CC2AC0600A0062D /* WidgetBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetBridge.m; sourceTree = "<group>"; };
+		D63E84E725A2F51C0070AF78 /* WidgetBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetBridge.h; sourceTree = "<group>"; };
 		D6444AA7259DE68100E8C17C /* BGTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTaskService.swift; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* WidgetBridge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WidgetBridge-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* WidgetBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBridge.swift; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				D63E84E725A2F51C0070AF78 /* WidgetBridge.h */,
 				F4FF95D6245B92E800C19C63 /* WidgetBridge.swift */,
 				D6444AA7259DE68100E8C17C /* BGTaskService.swift */,
 				B3E7B5891CC2AC0600A0062D /* WidgetBridge.m */,
