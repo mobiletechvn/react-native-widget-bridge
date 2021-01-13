@@ -98,8 +98,19 @@ public class WidgetBridge: NSObject {
       }
     }
   }
-  
-  
+
+  @objc(removeObject:withResolver:withRejecter:)
+  func removeObject(key: String,
+           resolve:RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock
+  ) -> Void {
+    if suite == nil {
+      reject("InvalidArgument", "[WidgetBridge] ERROR: You need to initUserDefaultsSuit(suiteName) first", NSError(domain: "", code: 200, userInfo: nil))
+    } else {
+      suite!.removeObject(forKey: key)
+      resolve(true)
+    }
+  }
+
   @objc(reloadWidget:withResolver:withRejecter:)
   func reloadWidget(
                     kind: String,

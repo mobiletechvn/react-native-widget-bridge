@@ -48,6 +48,12 @@ RCT_EXTERN_METHOD(
                   )
 
 RCT_EXTERN_METHOD(
+                  removeObject: (NSString *)key
+                  withResolver:(RCTPromiseResolveBlock)resolve
+                  withRejecter:(RCTPromiseRejectBlock)reject
+                  )
+
+RCT_EXTERN_METHOD(
                   reloadWidget: (NSString *)kind
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject

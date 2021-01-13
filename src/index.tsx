@@ -6,6 +6,7 @@ type WidgetBridgeType = {
   ensureUserDefaultsSuit(suiteName: string): Promise<boolean>;
   setDict(key: string, value: object): Promise<boolean>;
   getDict(key: string): Promise<object>;
+  removeObject(key: string): Promise<object>;
   reloadWidget(kind: string): Promise<object>;
 };
 
