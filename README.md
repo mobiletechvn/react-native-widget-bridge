@@ -18,17 +18,20 @@ import WidgetBridge from "react-native-widget-bridge";
 
 const result = await WidgetBridge.multiply(3, 7);
 
-# Always ensure that suite was ready to read/write before interact with it
-const success: Bool = WidgetBridge.ensureUserDefaultsSuit("group.my.exampe.com");
+// Always ensure that suite was ready to read/write before interact with it
+const success: Bool = await WidgetBridge.ensureUserDefaultsSuit("group.my.exampe.com");
 
-# If suite was read, write to UserDefaults suite
-const success: Bool = WidgetBridge.setDict("MyDictA", {a: 1, b:2, foo: "bar"});
-const success: Bool = WidgetBridge.setString("MyStringB", "This is a test string");
+// If suite has been ready, write to UserDefaults suite
+const success: Bool = await WidgetBridge.setDict("MyDictA", {a: 1, b:2, foo: "bar"});
+const dict: object = await WidgetBridge.getDict("MyDictA");
+const success: Bool = await WidgetBridge.removeObject("MyDictA");
 
-const dict: object = WidgetBridge.getDict("MyDictA");
-const str: String = WidgetBridge.setString("MyStringB");
+const success: Bool = await WidgetBridge.setString("MyStringB", "This is a test string");
+const str: String = await WidgetBridge.getString("MyStringB");
+const success: Bool = await WidgetBridge.removeObject("MyStringB");
 
-# Reload widget timeline after your's UserDefaults data was changed
+
+// Reload widget timeline after your's UserDefaults data was changed
 const myWidgetKind = "my_widget"
 WidgetBridge.reloadWidget(myWidgetKind)
 ```
