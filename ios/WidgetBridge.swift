@@ -123,4 +123,9 @@ public class WidgetBridge: NSObject {
     }
     resolve(true)
   }
+
+  @objc
+  static func requiresMainQueueSetup() -> Bool {
+    return true
+  }
 }
